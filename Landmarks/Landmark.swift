@@ -8,7 +8,7 @@
 import SwiftUI
 import CoreLocation
 
-struct Landmark: Codable {
+struct Landmark: Codable, Identifiable {
     var id: Int
     var name: String
     var imageName: String
