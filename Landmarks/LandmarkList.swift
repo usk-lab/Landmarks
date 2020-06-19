@@ -15,7 +15,7 @@ struct LandmarkList: View {
     var body: some View {
         NavigationView {
             List(landmarks) { landmark in
-                NavigationLink(destination: LandmarkDetail()) {
+                NavigationLink(destination: LandmarkDetail(landmark: landmark)) {
                     LandmarkRow(landmark: landmark)
                 }
             }
@@ -27,13 +27,7 @@ struct LandmarkList: View {
 struct LandmarkList_Previews: PreviewProvider {
     static var previews: some View {
         LandmarkList.init(landmarks: [
-            .init(id: 123,
-                  name: "Turtle Rock",
-                  imageName: "turtlerock",
-                  coordinates: .init(latitude: 34.011286, longitude: -116.166868),
-                  state: "California",
-                  park: "Joshua Tree National Park",
-                  category: .featured)
+            .sample
         ])
     }
 }

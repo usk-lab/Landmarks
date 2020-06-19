@@ -42,6 +42,6 @@ struct LandmarkDetail: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        LandmarkDetail()
+        LandmarkDetail(landmark: .sample)
     }
 }

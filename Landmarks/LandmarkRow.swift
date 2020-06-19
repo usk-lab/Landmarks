@@ -23,13 +23,7 @@ struct LandmarkRow: View {
 
 struct LandmarkRow_Previews: PreviewProvider {
     static var previews: some View {
-        LandmarkRow.init(landmark: .init(id: 123,
-                                         name: "Turtle Rock",
-                                         imageName: "turtlerock",
-                                         coordinates: .init(latitude: 34.011286, longitude: -116.166868),
-                                         state: "California",
-                                         park: "Joshua Tree National Park",
-                                         category: .featured))
+        LandmarkRow.init(landmark: .sample)
         .previewLayout(.fixed(width: 300, height: 70))
     }
 }

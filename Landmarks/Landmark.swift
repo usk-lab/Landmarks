@@ -35,6 +35,20 @@ extension Landmark {
     }
 }
 
+extension Landmark {
+    
+    static var sample: Landmark {
+        .init(id: 123,
+              name: "Turtle Rock",
+              imageName: "turtlerock",
+              coordinates: .init(latitude: 34.011286, longitude: -116.166868),
+              state: "California",
+              park: "Joshua Tree National Park",
+              category: .featured)
+    }
+    
+}
+
 struct Coordinates: Hashable, Codable {
     var latitude: Double
     var longitude: Double
