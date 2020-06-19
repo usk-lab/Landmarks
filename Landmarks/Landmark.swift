@@ -8,19 +8,17 @@
 import SwiftUI
 import CoreLocation
 
-struct Landmark: Hashable, Codable {
+struct Landmark: Codable {
     var id: Int
     var name: String
-    fileprivate var imageName: String
-    fileprivate var coordinates: Coordinates
+    var imageName: String
+    var coordinates: Coordinates
     var state: String
     var park: String
     var category: Category
 
     var locationCoordinate: CLLocationCoordinate2D {
-        CLLocationCoordinate2D(
-            latitude: coordinates.latitude,
-            longitude: coordinates.longitude)
+        .init(latitude: coordinates.latitude, longitude: coordinates.longitude)
     }
 
     enum Category: String, CaseIterable, Codable, Hashable {
