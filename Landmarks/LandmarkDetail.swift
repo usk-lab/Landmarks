@@ -22,14 +22,14 @@ struct LandmarkDetail: View {
                 .padding(.bottom, -130)
             
              VStack(alignment: .leading) {
-                 Text("Turtle Rock")
-                     .font(.title)
-                 HStack(alignment: .top) {
-                     Text("Joshua Tree National Park")
+                Text(landmark.name)
+                    .font(.title)
+                HStack(alignment: .top) {
+                    Text(landmark.park)
                          .font(.subheadline)
-                     Spacer()
-                     Text("California")
-                         .font(.subheadline)
+                    Spacer()
+                    Text(landmark.state)
+                        .font(.subheadline)
                  }
              }
              .padding()
