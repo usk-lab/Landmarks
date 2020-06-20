@@ -16,10 +16,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
 
+        let userData: UserData = .init(landmarks: DataManager.shared.landmarks)
+        
         // Use a UIHostingController as window root view controller.
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
-            window.rootViewController = UIHostingController(rootView: LandmarkList(landmarks: DataManager.shared.landmarks))
+            window.rootViewController = UIHostingController(rootView: LandmarkList().environmentObject(userData))
             self.window = window
             window.makeKeyAndVisible()
         }
