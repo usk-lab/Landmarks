@@ -16,6 +16,7 @@ struct Landmark: Codable, Identifiable {
     var state: String
     var park: String
     var category: Category
+    var favorite: Bool?
 
     var locationCoordinate: CLLocationCoordinate2D {
         .init(latitude: coordinates.latitude, longitude: coordinates.longitude)
@@ -33,6 +34,10 @@ extension Landmark {
     var image: Image {
         return .init(imageName)
     }
+    var isFavorite: Bool {
+        set { favorite = newValue }
+        get { favorite ?? false }
+    }
 }
 
 extension Landmark {
@@ -44,7 +49,14 @@ extension Landmark {
               coordinates: .init(latitude: 34.011286, longitude: -116.166868),
               state: "California",
               park: "Joshua Tree National Park",
-              category: .featured)
+              category: .featured,
+              favorite: false)
+    }
+    
+    static func sample(favorite: Bool) -> Landmark {
+        var landmark: Landmark = .sample
+        landmark.isFavorite = true
+        return landmark
     }
     
 }
